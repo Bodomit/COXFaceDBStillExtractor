@@ -1,0 +1,5 @@
+name: coxfacedbex
+channels:
+  - defaults
+dependencies:
+  - scikit-image=0.16
