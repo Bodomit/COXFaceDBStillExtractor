@@ -4,6 +4,7 @@ import csv
 import glob
 import functools
 
+import tqdm
 import numpy as np
 import skimage.io
 import skimage.util
@@ -113,7 +114,7 @@ def main(input_dir: str,
 
     show = functools.partial(debug_show, debug)
 
-    for image_path in image_paths:
+    for image_path in tqdm.tqdm(image_paths, ascii=True, dynamic_ncols=True):
         image = skimage.io.imread(image_path)
         eye_locs = eye_locations[os.path.basename(image_path)]
         show(image, eye_locs)
@@ -129,6 +130,7 @@ def main(input_dir: str,
 
         rel_path = os.path.relpath(image_path, input_dir)
         out_path = os.path.join(output_dir, rel_path)
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
         skimage.io.imsave(out_path, image)
 
 
