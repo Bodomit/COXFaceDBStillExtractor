@@ -127,6 +127,10 @@ def main(input_dir: str,
 
         show(image)
 
+        rel_path = os.path.relpath(image_path, input_dir)
+        out_path = os.path.join(output_dir, rel_path)
+        skimage.io.imsave(out_path, image)
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser("COXFaceDBStillExtractor")
