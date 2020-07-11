@@ -13,6 +13,7 @@
                 "D:\\datasets\\coxfacedb\\data2\\original_still_video\\still",
                 "D:\\datasets\\coxfacedb\\eye_location\\FaceFP_still.txt",
                 "D:\\datasets\\coxfacedb\\data2\\original_still_video\\still_extracted",
+                "--debug"
             ],
             "console": "integratedTerminal"
         }
